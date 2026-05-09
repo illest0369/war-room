@@ -13,12 +13,12 @@ export function ExecutionScoreCard() {
     <motion.div
       whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(0,0,0,0.08)' }}
       transition={{ duration: 0.2 }}
-      className="card-elevated bg-white border border-border p-6 flex flex-col"
+      className="card-elevated bg-white border border-border p-4 sm:p-6 flex flex-col"
     >
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between mb-4 sm:mb-6">
         <motion.p
-          className="text-sm font-medium text-muted-foreground uppercase tracking-wider"
+          className="text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-wider"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -27,15 +27,15 @@ export function ExecutionScoreCard() {
         </motion.p>
         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
           <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground rounded-lg">
-            <MoreVertical className="w-5 h-5" />
+            <MoreVertical className="w-4 sm:w-5 h-4 sm:h-5" />
           </Button>
         </motion.div>
       </div>
 
       {/* Circular Progress */}
-      <div className="flex-1 flex items-center justify-center mb-6">
+      <div className="flex-1 flex items-center justify-center mb-4 sm:mb-6">
         <motion.div
-          className="relative w-32 h-32"
+          className="relative w-24 sm:w-32 h-24 sm:h-32"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.4 }}
@@ -71,7 +71,7 @@ export function ExecutionScoreCard() {
           {/* Center text */}
           <div className="absolute inset-0 flex flex-col items-center justify-center">
             <motion.span
-              className="text-3xl font-bold text-foreground"
+              className="text-2xl sm:text-3xl font-bold text-foreground"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4, duration: 0.4 }}
@@ -84,7 +84,7 @@ export function ExecutionScoreCard() {
       </div>
 
       {/* Metrics */}
-      <motion.div className="grid grid-cols-3 gap-4 pt-4 border-t border-border">
+      <motion.div className="grid grid-cols-3 gap-2 sm:gap-4 pt-3 sm:pt-4 border-t border-border">
         {[
           { value: '12', label: 'Wins' },
           { value: '8', label: 'Shipped' },
@@ -97,7 +97,7 @@ export function ExecutionScoreCard() {
             transition={{ delay: 0.5 + i * 0.1 }}
             className="text-center hover:bg-slate-50 p-2 rounded-lg transition-colors"
           >
-            <p className="text-2xl font-bold text-foreground">{metric.value}</p>
+            <p className="text-xl sm:text-2xl font-bold text-foreground">{metric.value}</p>
             <p className="text-xs text-muted-foreground mt-1">{metric.label}</p>
           </motion.div>
         ))}
