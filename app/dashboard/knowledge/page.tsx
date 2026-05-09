@@ -1,0 +1,1 @@
+export default function Page() { return <div className='space-y-6'><h2 className='text-3xl font-bold'>Knowledge Base</h2><p className='text-muted-foreground'>Knowledge management coming soon</p></div> }
